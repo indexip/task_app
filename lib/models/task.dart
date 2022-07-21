@@ -1,0 +1,14 @@
+class Task {
+  final int id;
+  final String title;
+  bool done;
+
+  Task({required this.id, required this.title, this.done = false});
+
+  factory Task.fromMap(Map taskMap) =>
+      Task(id: taskMap['id'], title: taskMap['title'], done: taskMap['done']);
+
+  getToggle() {
+    done = !done;
+  }
+}
